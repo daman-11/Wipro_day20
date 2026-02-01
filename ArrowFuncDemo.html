@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrow Function Demo</title>
+</head>
+<body>
+
+    <h2>Arrow Function Example</h2>
+
+    <script>
+        // Arrow function to check odd or even
+        const checkOddEven = (number) => {
+            if (number % 2 === 0) {
+                console.log(number + " is Even");
+            } else {
+                console.log(number + " is Odd");
+            }
+        };
+
+        // Testing the arrow function
+        checkOddEven(10);
+        checkOddEven(7);
+        checkOddEven(25);
+        
+
+        // Arrow function to find square of a number
+        const findSquare = (num) => {
+            return num * num;
+        };
+
+        // Testing the arrow function
+        console.log(findSquare(5));   // 25
+        console.log(findSquare(8));   // 64
+        console.log(findSquare(12));  // 144
+    </script>
+
+</body>
+</html>
