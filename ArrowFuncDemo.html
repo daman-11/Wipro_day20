@@ -19,9 +19,9 @@
         };
 
         // Testing the arrow function
-        checkOddEven(10);
-        checkOddEven(7);
-        checkOddEven(25);
+        checkOddEven(10);// Even
+        checkOddEven(7);// Odd
+        checkOddEven(25);// Odd
         
 
         // Arrow function to find square of a number
@@ -33,6 +33,13 @@
         console.log(findSquare(5));   // 25
         console.log(findSquare(8));   // 64
         console.log(findSquare(12));  // 144
+
+        /*Arrow functions are used for shorter syntax and they do not have their own 'this' context 
+        which means they inherit 'this' from the parent scope. it is useful in scenarios like event handling and callbacks.
+        moreover, they cannot be used as constructors and do not have the 'arguments' object.
+        By using arrow functions, we can write more concise and readable code.
+        */
+
     </script>
 
 </body>
