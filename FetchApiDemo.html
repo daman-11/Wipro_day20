@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch API Demo</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            background-color: rgb(199, 89, 89);
+            padding: 20px;
+        }
+        .user {
+            border: 1px solid #d70c0cc7;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #d70c0cc6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2><b>Users List</b></h2>
+    <button onclick="fetchUsers()">Load Users</button>
+
+    <div id="output"></div>
+
+    <script>
+        // function to fetch users from an API and display them
+        function fetchUsers() {
+            fetch("https://jsonplaceholder.typicode.com/users")// Fetching user data from a public API
+                .then(response => response.json())// Parsing the response as JSON
+                .then(data => {// Handling the parsed data
+                    const outputDiv = document.getElementById("output");// Getting the output div
+                    outputDiv.innerHTML = "";// Clearing previous content
+
+                    data.forEach(user => {// Iterating through each user
+                        outputDiv.innerHTML += `
+                            <div class="user">
+                                <strong>Name:</strong> ${user.name} <br>
+                                <strong>Email:</strong> ${user.email} <br>
+                                <strong>City:</strong> ${user.address.city}
+                            </div>
+                        `;
+                    });
+                })
+                .catch(error => {// Handling any errors that occur during the fetch
+                    console.error("Error fetching data:", error);// Logging the error to the console
+                });
+        }
+            /* here, the Fetch API is used to retrieve user data from a public API endpoint.
+            The fetched data is then parsed as JSON and displayed dynamically on the webpage.
+            Error handling is also implemented to catch any issues during the fetch process.
+            */
+    </script>
+
+</body>
+</html>
