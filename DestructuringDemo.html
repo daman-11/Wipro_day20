@@ -1,0 +1,44 @@
+<!--Example to demonstrate JavaScript destructuring in JavaScript-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Destructuring Example</title>
+</head>
+<body>
+
+    <h2>JavaScript Destructuring</h2>
+
+    <script>
+        // Object with student details
+        const student = { // here we have an object named student which contains properties like name, age, course, and a nested object marks.
+            name: "Daman",
+            age: 22,
+            course: "Computer Science",
+            marks: {
+                math: 85,
+                science: 90
+            }
+        };
+
+        // Object destructuring
+        const { name, age, course } = student;
+
+        console.log(name);    // Daman
+        console.log(age);     // 22
+        console.log(course);  // Computer Science
+
+        //  Nested destructuring
+        const { marks: { math, science } } = student;
+
+        console.log(math);    // 85
+        console.log(science); // 90
+        /* Destructuring allows us to extract values from objects and arrays in a more concise way.
+        In the above example, we destructured the student object to get name, age, and course directly.
+        We also demonstrated nested destructuring to extract math and science marks from the nested marks object.
+        This makes the code cleaner and easier to read.
+        */
+    </script>
+
+</body>
+</html>
